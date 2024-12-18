@@ -1,6 +1,10 @@
 .PHONY: aw-webui build install test typecheck package clean
 
-build: aw-webui
+# build: aw-webui
+# 	poetry install
+
+
+build: 
 	poetry install
 
 aw-webui:
