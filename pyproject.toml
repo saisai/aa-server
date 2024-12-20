@@ -1,13 +1,13 @@
 [tool.poetry]
-name = "aw-server"
+name = "aa-server"
 version = "0.13.2"
 description = "Server for ActivityWatch"
 authors = ["Erik Bjäreholt <erik@bjareho.lt>"]
 license = "MPL-2.0"
-include = ["aw_server/static/*"]
+include = ["aa_server/static/*"]
 
 [tool.poetry.scripts]
-aw-server = "aw_server:main"
+aa-server = "aa_server:main"
 
 [tool.poetry.dependencies]
 python = "^3.8"
@@ -32,7 +32,7 @@ black = "^23.3.0"
 
 [tool.pytest.ini_options]
 minversion = "6.0"
-addopts = "--cov-report=term --cov-report=xml --cov-report=html --cov=aw_server"
+addopts = "--cov-report=term --cov-report=xml --cov-report=html --cov=aa_server"
 python_files = ["*.py",]
 
 [tool.ruff]
