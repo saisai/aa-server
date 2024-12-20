@@ -8,7 +8,7 @@ build:
 	poetry install
 
 aw-webui:
-	mkdir -p aw_server/static/
+	# mkdir -p aw_server/static/
 ifeq ($(SKIP_WEBUI),true) # Skip building webui if SKIP_WEBUI is true
 	@echo "Skipping building webui"
 else
@@ -22,20 +22,20 @@ else
 endif
 
 install:
-	cp misc/aw-server.service /usr/lib/systemd/user/aw-server.service
+	cp misc/aa-server.service /usr/lib/systemd/user/aa-server.service
 
 test:
 	@# Note that extensive integration tests are also run in the bundle repo,
 	@# for both aw-server and aw-server-rust, but without code coverage.
-	python -c 'import aw_server'
+	python -c 'import aa_server'
 	python -m pytest tests/test_server.py
 
 typecheck:
-	python -m mypy aw_server tests --ignore-missing-imports
+	python -m mypy aa_server tests --ignore-missing-imports
 
 package: bump-version
 	rm -rf dist
-	pyinstaller aw-server.spec --clean --noconfirm
+	pyinstaller aa-server.spec --clean --noconfirm
 
 PYFILES=$(shell find . -name '*.py')
 
@@ -51,12 +51,12 @@ format:
 
 bump-version:
 	@# make sure to pull tags in parent repo before running this
-	poetry run python -m aw_server.__about__
-	VERSION=$$(grep -oP '__version__ = "v\K[^"]+' aw_server/__about__.py | head -n1); echo $$VERSION; poetry version $$VERSION
+	poetry run python -m aa_server.__about__
+	VERSION=$$(grep -oP '__version__ = "v\K[^"]+' aa_server/__about__.py | head -n1); echo $$VERSION; poetry version $$VERSION
 
 clean:
 	rm -rf build dist
-	rm -rf aw_server/__pycache__
-	rm -rf aw_server/static/*
-	pip3 uninstall -y aw_server
+	rm -rf aa_server/__pycache__
+	rm -rf aa_server/static/*
+	pip3 uninstall -y aa_server
 	make --directory=aw-webui clean
