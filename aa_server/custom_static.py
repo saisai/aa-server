@@ -1,7 +1,7 @@
 """
 Contains endpoints, as well as utility functions for custom static content.
 
-NOTE: Experimental, not (yet) implemented in aw-server-rust.
+NOTE: Experimental, not (yet) implemented in aa-server-rust.
 
 Idea: Allow custom watchers to extend the Web UI and to write custom visualizations completely independently and free.
 

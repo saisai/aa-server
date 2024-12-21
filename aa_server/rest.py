@@ -176,7 +176,7 @@ class BucketResource(Resource):
         args = request.args
         if not current_app.api.testing:
             if "force" not in args or args["force"] != "1":
-                msg = "Deleting buckets is only permitted if aw-server is running in testing mode or if ?force=1"
+                msg = "Deleting buckets is only permitted if aa-server is running in testing mode or if ?force=1"
                 raise Unauthorized("DeleteBucketUnauthorized", msg)
 
         current_app.api.delete_bucket(bucket_id)

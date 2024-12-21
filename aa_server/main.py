@@ -23,7 +23,7 @@ def main():
     # That is why log_file_json=True currently.
     # UPDATE: The LogResource API is no longer available so log_file_json is now False.
     setup_logging(
-        "aw-server",
+        "aa-server",
         testing=settings.testing,
         verbose=settings.verbose,
         log_stderr=True,
@@ -57,7 +57,7 @@ def parse_settings():
     parser.add_argument(
         "--testing",
         action="store_true",
-        help="Run aw-server in testing mode using different ports and database",
+        help="Run aa-server in testing mode using different ports and database",
     )
     parser.add_argument("--verbose", action="store_true", help="Be chatty.")
     parser.add_argument(

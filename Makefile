@@ -26,7 +26,7 @@ install:
 
 test:
 	@# Note that extensive integration tests are also run in the bundle repo,
-	@# for both aw-server and aw-server-rust, but without code coverage.
+	@# for both aa-server and aa-server-rust, but without code coverage.
 	python -c 'import aa_server'
 	python -m pytest tests/test_server.py
 

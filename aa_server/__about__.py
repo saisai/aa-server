@@ -85,7 +85,7 @@ def detect_version_git() -> Optional[str]:
 
 def detect_version_pkg() -> Optional[str]:
     try:
-        return f"v{get_version('aw-server')}.dev+{get_rev()}"
+        return f"v{get_version('aa-server')}.dev+{get_rev()}"
     except PackageNotFoundError:
         return None
 

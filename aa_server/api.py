@@ -27,7 +27,7 @@ logger = logging.getLogger(__name__)
 
 
 def get_device_id() -> str:
-    path = Path(get_data_dir("aw-server")) / "device_id"
+    path = Path(get_data_dir("aa-server")) / "device_id"
     if path.exists():
         with open(path) as f:
             return f.read()
@@ -120,7 +120,7 @@ class ServerAPI:
         )
 
         # scrub IDs from events
-        # (otherwise causes weird bugs with no events seemingly imported when importing events exported from aw-server-rust, which contains IDs)
+        # (otherwise causes weird bugs with no events seemingly imported when importing events exported from aa-server-rust, which contains IDs)
         for event in bucket_data["events"]:
             if "id" in event:
                 del event["id"]

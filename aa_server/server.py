@@ -38,7 +38,7 @@ class AWFlask(Flask):
         static_folder=static_folder,
         static_url_path="",
     ):
-        name = "aw-server"
+        name = "aa-server"
         self.json_provider_class = CustomJSONProvider
         # only prettyprint JSON if testing (due to perf)
         self.json_provider_class.compact = not testing

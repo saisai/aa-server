@@ -7,7 +7,7 @@ from aw_core.dirs import get_config_dir
 class Settings:
     def __init__(self, testing: bool):
         filename = "settings.json" if not testing else "settings-testing.json"
-        self.config_file = Path(get_config_dir("aw-server")) / filename
+        self.config_file = Path(get_config_dir("aa-server")) / filename
         self.load()
 
     def __getitem__(self, key):
