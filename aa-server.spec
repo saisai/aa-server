@@ -3,10 +3,10 @@
 
 import os
 
-import aw_core
+import aa_core
 import flask_restx
 
-aw_core_path = os.path.dirname(aw_core.__file__)
+aa_core_path = os.path.dirname(aa_core.__file__)
 restx_path = os.path.dirname(flask_restx.__file__)
 
 name = "aa-server"
@@ -20,7 +20,7 @@ a = Analysis(
     datas=[
         (os.path.join(restx_path, "templates"), "flask_restx/templates"),
         (os.path.join(restx_path, "static"), "flask_restx/static"),
-        (os.path.join(aw_core_path, "schemas"), "aw_core/schemas"),
+        (os.path.join(aa_core_path, "schemas"), "aa_core/schemas"),
     ],
     hiddenimports=[],
     hookspath=[],

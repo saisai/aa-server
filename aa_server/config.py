@@ -1,4 +1,4 @@
-from aw_core.config import load_config_toml
+from aa_core.config import load_config_toml
 
 default_config = """
 [server]
@@ -18,4 +18,4 @@ cors_origins = ""
 [server-testing.custom_static]
 """.strip()
 
-config = load_config_toml("aw-server", default_config)
+config = load_config_toml("aa-server", default_config)

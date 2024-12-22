@@ -4,15 +4,15 @@ import pstats
 from datetime import timezone as tz
 from datetime import datetime
 
-from aw_core.models import Event
+from aa_core.models import Event
 
-import aw_datastore
-import aw_server
+import aa_datastore
+import aa_server
 
 
 def benchmark():
-    ds = aw_datastore.Datastore(aw_datastore.storages.PeeweeStorage, testing=True)
-    api = aw_server.api.ServerAPI(ds, testing=True)
+    ds = aa_datastore.Datastore(aa_datastore.storages.PeeweeStorage, testing=True)
+    api = aa_server.api.ServerAPI(ds, testing=True)
 
     print(api.get_info())
 

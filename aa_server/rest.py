@@ -5,9 +5,9 @@ from threading import Lock
 from typing import Dict
 
 import iso8601
-from aw_core import schema
-from aw_core.models import Event
-from aw_query.exceptions import QueryException
+from aa_core import schema
+from aa_core.models import Event
+from aa_query.exceptions import QueryException
 from flask import (
     Blueprint,
     current_app,
@@ -337,7 +337,7 @@ class ExportAllResource(Resource):
         buckets_export = current_app.api.export_all()
         payload = {"buckets": buckets_export}
         response = make_response(json.dumps(payload))
-        filename = "aw-buckets-export.json"
+        filename = "aa-buckets-export.json"
         response.headers["Content-Disposition"] = "attachment; filename={}".format(
             filename
         )
@@ -353,7 +353,7 @@ class BucketExportResource(Resource):
         bucket_export = current_app.api.export_bucket(bucket_id)
         payload = {"buckets": {bucket_export["id"]: bucket_export}}
         response = make_response(json.dumps(payload))
-        filename = "aw-bucket-export_{}.json".format(bucket_export["id"])
+        filename = "aa-bucket-export_{}.json".format(bucket_export["id"])
         response.headers["Content-Disposition"] = "attachment; filename={}".format(
             filename
         )

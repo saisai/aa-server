@@ -1,7 +1,7 @@
 import json
 from pathlib import Path
 
-from aw_core.dirs import get_config_dir
+from aa_core.dirs import get_config_dir
 
 
 class Settings:

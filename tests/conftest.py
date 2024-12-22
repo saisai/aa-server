@@ -1,8 +1,8 @@
 import logging
 
 import pytest
-from aw_client import ActivityWatchClient
-from aw_server.server import AWFlask
+from aa_client import ActivityWatchClient
+from aa_server.server import AWFlask
 
 logging.basicConfig(level=logging.WARN)
 

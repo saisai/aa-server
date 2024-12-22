@@ -13,11 +13,11 @@ from typing import (
 from uuid import uuid4
 
 import iso8601
-from aw_core.dirs import get_data_dir
-from aw_core.log import get_log_file_path
-from aw_core.models import Event
-from aw_query import query2
-from aw_transform import heartbeat_merge
+from aa_core.dirs import get_data_dir
+from aa_core.log import get_log_file_path
+from aa_core.models import Event
+from aa_query import query2
+from aa_transform import heartbeat_merge
 
 from .__about__ import __version__
 from .exceptions import NotFound

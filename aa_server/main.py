@@ -1,8 +1,8 @@
 import logging
 import sys
 
-from aw_core.log import setup_logging
-from aw_datastore import get_storage_methods
+from aa_core.log import setup_logging
+from aa_datastore import get_storage_methods
 
 from . import __version__
 from .config import config
